@@ -1,0 +1,28 @@
+En résumé
+- SystemJS est la bibliothèque par défaut choisie par Angular pour charger les modules.
+- On a besoin au minimum d'un module racine et d'un composant racine par application.
+- Le module racine se nomme par convention AppModule.
+- Le composant racine se nomme par convention AppComponent.
+- L'ordre de chargement de l'application est le suivant : index.html > main.ts > app.module.ts > app.component.ts.
+- Le fichier package.json initial est fourni avec des commandes prêtes à l'emploi comme la commande npm start, qui nous permet de démarrer notre application web.
+
+Les cycles de vie d'un composant
+Chaque composant a un cycle de vie géré par Angular lui-même. Angular crée le composant, s'occupe de l'afficher, crée et affiche ses composants fils, vérifie quand les données des propriétés changent, et détruit les composants, avant de les retirer du DOM quand cela est nécessaire.
+Angular nous offre la possibilité d'agir sur ces moments clefs quand ils se produisent, en implémentant une ou plusieurs interfaces, pour chacun des événements disponibles. Ces interfaces sont disponibles dans la librairie core d'Angular.
+Chaque interface permettant d'interagir sur le cycle de vie d'un composant fournit une et une seule méthode, dont le nom est le nom de l'interface préfixé par ng. Par exemple, l'interface OnInit fournit la méthode ngOnInit, et permet de définir un comportement lorsque le composant est initialisé.
+Voici ci-dessous la liste des méthodes disponibles pour interagir avec le cycle de vie d'un composant, dans l'ordre chronologique du moment où elles sont appelées par Angular.
+ngOnChanges:
+C'est la méthode appelée en premier lors de la création d'un composant, avant même ngOnInit, et à chaque fois que Angular détecte que les valeurs d'une propriété du composant sont modifiées. La méthode reçoit en paramètre un objet représentant les valeurs actuelles et les valeurs précédentes disponibles pour ce composant.
+ngOnInit:
+Cette méthode est appelée juste après le premier appel à ngOnChanges, et elle initialise le composant après qu’Angular ait initialisé les propriétés du composant.
+ngDoCheck:
+On peut implémenter cette interface pour étendre le comportement par défaut de la méthode ngOnChanges, afin de pouvoir détecter et agir sur des changements qu’Angular ne peut pas détecter par lui-même.
+ngAfterViewInit:
+Cette méthode est appelée juste après la mise en place de la vue d'un composant, et des vues de ses composants fils s'il en a.
+ngOnDestroy:
+Appelée en dernier, cette méthode est appelée avant qu’Angular ne détruise et ne retire du DOM le composant. Cela peut se produire lorsqu'un utilisateur navigue d'un composant à un autre par exemple. Afin d'éviter les fuites de mémoire, c'est dans cette méthode que nous effectuerons un certain nombre d'opérations afin de laisser l'application "propre" (nous détacherons les gestionnaires d'événements par exemple).
+Même si vous ne définissez pas explicitement des méthodes de cycle de vie dans votre composant, sachez que ces méthodes sont appelées en interne par Angular pour chaque composant. Lorsqu'on utilise ces méthodes, on vient donc juste surcharger tel ou tel événement du cycle de vie d'un composant.
+Les méthodes que vous utiliserez le plus seront certainement ngOnInit et ngOnDestroy, qui permettent d'initialiser un composant, et de le nettoyer proprement par la suite lorsqu'il est détruit.
+
+https://angular.io/guide/lifecycle-hooks
+

@@ -1,0 +1,24 @@
+<h1>{{ title }}</h1>
+
+<!-- <button type="button"(click)="onClickTest()">Test</button> -->
+
+<input (keyup)="onKey($event)">
+<p>{{ value1 }}</p>
+
+<input #box (keyup)="0"> 
+<p>{{ "Nice try " + box.value }}</p>
+
+<input #box2 (keyup)="onKeyup(box2.value)"> 
+<p>{{ value2 }}</p>
+
+<div *ngIf="myBoolean">
+    <p>Ceci est un paragraphe</p>
+</div>
+
+<div *ngIf="!myBoolean">
+        <p>Ceci n'est pas un paragraphe</p>
+</div>
+
+<ol>
+    <li *ngFor="let item of pokemons;">{{ item.name}}</li>
+</ol>

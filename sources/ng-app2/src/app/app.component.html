@@ -1,0 +1,15 @@
+<h1 class='center'>{{ title }}</h1>
+
+<ul>
+    <li>{{ oCategories[0].categorie[0].name }}</li>
+    <ul>
+        <li *ngFor="let item of oCategories">{{ item.name }}</li>
+    </ul>
+</ul>
+
+<ul>
+    <li>{{ iCategories[0].categorie[0].name }}</li>
+    <ul>
+        <li *ngFor="let item of iCategories">{{ item.name }}</li>
+    </ul>
+</ul>

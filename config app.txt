@@ -1,0 +1,149 @@
+How to setup your angular framework:
+
+Install NodeJS
+https://nodejs.org/en/
+Usually use the LTS version (Long  Term Service) the other version is Beta and may be unstable.
+
+Create app folder eg: ng-app
+In there create a package.json file in VS code.
+
+package.json
+
+
+Add the following code: 
+{
+ "name": "ng-app",
+ "version": "1.0.0",
+ "description": "An awesome application.",
+ "scripts": {
+   "build": "tsc -p src/",
+   "build:watch": "tsc -p src/ -w",
+   "serve": "lite-server -c=bs-config.json",
+   "prestart": "npm run build",
+   "start": "concurrently \"npm run build:watch\" \"npm run serve\""
+ },
+ "private": true,
+ "dependencies": {
+   "@angular/animations": "~8.0.0",
+   "@angular/common": "~8.0.0",
+   "@angular/compiler": "~8.0.0",
+   "@angular/core": "~8.0.0",
+   "@angular/forms": "~8.0.0",
+   "@angular/platform-browser": "~8.0.0",
+   "@angular/platform-browser-dynamic": "~8.0.0",
+   "@angular/router": "~8.0.0",
+   "core-js": "~2.5.4",
+   "rxjs": "~6.2.0",
+   "rxjs-compat": "~6.2.0",
+   "systemjs": "~0.19.40",
+   "zone.js": "~0.8.26"
+ },
+ "devDependencies": {
+   "angular-in-memory-web-api": "~0.8.0",
+   "concurrently": "~3.6.0",
+   "firebase-tools": "~7.0.2",
+   "lite-server": "~2.4.0",
+   "tslint": "~5.9.1",
+   "typescript": "~3.4.0"
+ }
+}
+
+Create src folder as a subfolder to ng-app
+
+Create a file in this systemjs.config.js
+systemjs.config.js
+
+Add the following code: 
+
+/**
+* System configuration for Angular samples
+* Adjust as necessary for your application needs.
+*/
+(function (global) {
+   System.config({
+     paths: {
+       // paths serve as alias
+       'npm:': 'node_modules/'
+     },
+     // map tells the System loader where to look for things
+     map: {
+       // our app is within the dist/app folder
+       'app': 'dist/app',
+        // angular bundles
+       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+       '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+       '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+       '@angular/http': 'npm:@angular/common/bundles/common-http.umd.js',
+       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+        // other libraries
+       'tslib': 'npm:tslib/tslib.js',
+       'rxjs': 'npm:rxjs',
+       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+     },
+     // packages tells the System loader how to load when no filename and/or no extension
+     packages: {
+       app: {
+         defaultExtension: 'js',
+       },
+       rxjs: {
+           main: 'index.js',
+           defaultExtension: 'js'
+       },
+       'rxjs/operators': {
+           main: 'index.js',
+           defaultExtension: 'js'
+       }
+     }
+   });
+ })(this);
+
+Create another file in src called tsconfig.json
+It may cause error in visual studio but once you add the following code it should be okay. 
+
+
+
+tsconfig.json
+
+{
+   "compilerOptions": {
+     "target": "es5",
+     "module": "commonjs",
+     "moduleResolution": "node",
+     "sourceMap": true,
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "lib": [ "es2015", "dom" ],
+     "noImplicitAny": true,
+     "suppressImplicitAnyIndexErrors": true,
+     "typeRoots" : ["node_modules/@types"],
+     "outDir": "dist"
+   }
+}
+
+
+There is still an error because visual studio sees ts in the name tsconfig.json
+To fix this restart visual studio and it will read the correct extension.
+
+Create bs-config.json
+
+In the base folder ng-app
+
+bs-config.json
+ 
+
+{
+   "server": {
+       "baseDir": "src",
+       "routes": {
+           "/node_modules": "node_modules"
+       }
+   }
+}
+ 
+Finally open the terminal and run NPM install
+ 
+npm install
