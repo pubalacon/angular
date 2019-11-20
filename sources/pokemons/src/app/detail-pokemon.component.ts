@@ -23,17 +23,17 @@ export class DetailPokemonComponent implements OnInit {
         // Récupérer la liste des pokémons
         this.pokemons = POKEMONS;
 
-        id = +this.route.snapshot.paramMap["id"];  // le param est une string, cela permet de le caster
+        id = +this.route.snapshot.paramMap.get("id");  // le param est une string, cela permet de le caster
 
         /*
         // avec boucle for
         for(i=0; i<this.pokemons.length; i++) {
             if (this.pokemons[i].id==id) {
                 this.pokemon = this.pokemons[i];
-                break;
+                //break;
             }
         }
-
+        
         // ou avec forEach et une fonction lambda
         this.pokemons.forEach( x => {
             if (x.id==id) {
@@ -41,9 +41,8 @@ export class DetailPokemonComponent implements OnInit {
             }
         });
 
-        // ou avec un filtre sur le tableau
         */
-
+        // ou avec un filtre sur le tableau
         this.pokemon = this.pokemons.filter(x => x.id==id) [0];
             
     }
