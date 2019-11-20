@@ -6,6 +6,7 @@ import { BorderCardDirective } from "./border-card.directive";
 import { PokemonTypeColorPipe } from "./pokemon-type-color.pipe";
 import { ListPokemonComponent } from "./list-pokemon.component";
 import { DetailPokemonComponent } from "./detail-pokemon.component";
+import { PokemonService } from "./pokemon.service";
 
 @NgModule({
     imports: [
@@ -18,8 +19,8 @@ import { DetailPokemonComponent } from "./detail-pokemon.component";
         BorderCardDirective,
         PokemonTypeColorPipe
     ],
-    providers: [
-        
+    providers:  [
+        PokemonService
     ]
 })
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Pokemon } from './pokemon';
 import { POKEMONS } from './mock-pokemon';
+import { PokemonService } from './pokemon.service';
 ​
 @Component({
     selector: 'detail-pokemon',
@@ -13,19 +14,23 @@ export class DetailPokemonComponent implements OnInit {
     pokemons: Pokemon[] = null;
     pokemon: Pokemon = null;
 ​
-    constructor(private route: ActivatedRoute, private router: Router) { }
+    constructor(
+        private route: ActivatedRoute, 
+        private router: Router, 
+        private _pokemonService : PokemonService
+    ) { }
 ​
     ngOnInit(): void {
         
         let id: number;
-        let i: number;
-
-        // Récupérer la liste des pokémons
-        this.pokemons = POKEMONS;
 
         id = +this.route.snapshot.paramMap.get("id");  // le param est une string, cela permet de le caster
 
         /*
+        // Récupérer la liste des pokémons
+        this.pokemons = POKEMONS;
+        let i: number;
+
         // avec boucle for
         for(i=0; i<this.pokemons.length; i++) {
             if (this.pokemons[i].id==id) {
@@ -42,10 +47,13 @@ export class DetailPokemonComponent implements OnInit {
                 this.pokemon = x;
             }
         });
-        */
        
         // ou avec un filtre sur le tableau
-        this.pokemon = this.pokemons.filter(x => x.id==id) [0];
+        //this.pokemon = this.pokemons.filter(x => x.id==id) [0];
+        */
+
+        // avec le service
+        this.pokemon = this._pokemonService.getPokemons().filter(x => x.id==id)[0];
             
     }
 ​
