@@ -12,14 +12,17 @@ export class AppComponent implements OnInit {
     private pokemons: Pokemon[];
 ​
     constructor() { 
-​
+​       // injection de dependances (services)
     }
 
+    ngOnInit() {
+        // initialisation, role equivalent au constructeur de classe dans d'autres languages
+        this.pokemons = POKEMONS;
+    }
+
+    // methodes
     selectPokemon(pokemon: Pokemon) {
         alert("Vous avez cliqué sur " + pokemon.name);
     }
 ​
-    ngOnInit() {
-        this.pokemons = POKEMONS;
-    }
 }

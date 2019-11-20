@@ -18,4 +18,5 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
     ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }
