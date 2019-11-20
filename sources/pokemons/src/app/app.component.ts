@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: './app/app.component.html' // path relatif à la racine (sinon ne fonctionne pas)
 })
 ​
-export class AppComponent {
-​​
-}
+export class AppComponent { }
