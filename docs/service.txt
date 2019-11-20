@@ -1,0 +1,17 @@
+En résumé
+- Il faut ajouter l'annotation @Injectable sur tous nos services.
+- Un service permet de factoriser et de centraliser du code qui peut être utile ailleurs dans l'application.
+- On utilise l'injection de dépendances pour rendre un service disponible dans un composant.
+- On ne gère jamais nous-mêmes les dépendances sur un composant ou un service, on passe toujours par l'injection de dépendances.
+- L'injection de dépendance permet de garantir que l'instance de notre service est unique à travers toute l'application.
+- On définit un fournisseur de service pour déterminer dans quelles zones de notre application notre service sera disponible.
+- On peut fournir un service pour toute l'application, pour un module particulier ou pour un composant. 
+-------------------------------------------
+Sumary
+- It is necessary to add the @Injectable annotation on all our services.
+- A service allows you to factor and centralize code that may be useful elsewhere in the application.
+- Dependency injection is used to make a service available in a component.
+- We never manage dependencies on a component or service ourselves, we always go through the injection of dependencies.
+- Dependency injection ensures that the instance of our service is unique throughout the entire application.
+- We define a service provider to determine in which areas of our application our service will be available.
+- A service can be provided for the entire application, for a particular module or for a component.

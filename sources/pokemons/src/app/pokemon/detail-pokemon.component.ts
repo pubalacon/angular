@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+
 import { Pokemon } from './pokemon';
-import { POKEMONS } from './mock-pokemon';
 import { PokemonService } from './pokemon.service';
 ​
 @Component({
@@ -17,8 +17,7 @@ export class DetailPokemonComponent implements OnInit {
     constructor(
         private route: ActivatedRoute, 
         private router: Router, 
-        private _pokemonService : PokemonService
-    ) { }
+        private _pokemonService : PokemonService ) { }
 ​
     ngOnInit(): void {
         
@@ -60,6 +59,13 @@ export class DetailPokemonComponent implements OnInit {
     goBack(): void {
         // Méthode qui permet de revenir sur la page /pokemons
         this.router.navigate(['/pokemons']);
+    }
+
+    goEdit(pokemon : Pokemon): void {
+        // Méthode qui permet d'éditer le pokemon
+
+        let link = ['/pokemon/edit', pokemon.id];
+        this.router.navigate(link);
     }
 }
 
