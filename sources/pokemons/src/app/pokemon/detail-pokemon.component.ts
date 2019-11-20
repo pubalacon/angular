@@ -5,7 +5,7 @@ import { POKEMONS } from './mock-pokemon';
 ​
 @Component({
     selector: 'detail-pokemon',
-    templateUrl: './app/detail-pokemon.component.html'
+    templateUrl: './app/pokemon/detail-pokemon.component.html'
 })
 
 export class DetailPokemonComponent implements OnInit {
@@ -33,15 +33,17 @@ export class DetailPokemonComponent implements OnInit {
                 //break;
             }
         }
+        */
         
+        /*
         // ou avec forEach et une fonction lambda
         this.pokemons.forEach( x => {
             if (x.id==id) {
                 this.pokemon = x;
             }
         });
-
         */
+       
         // ou avec un filtre sur le tableau
         this.pokemon = this.pokemons.filter(x => x.id==id) [0];
             

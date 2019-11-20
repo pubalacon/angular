@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 ​
 @Component({
 	selector: 'list-pokemon',
-	templateUrl: './app/list-pokemon.component.html'
+	templateUrl: './app/pokemon/list-pokemon.component.html'
 })
 
 export class ListPokemonComponent implements OnInit {
