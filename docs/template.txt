@@ -1,0 +1,18 @@
+En résumé
+- L'interpolation permet d'afficher les propriétés de nos composants dans les templates, via la syntaxe {‌{ }}.
+- On peut lier une propriété d'élément, d'attribut, de classe ou de style d'un composant vers le template.
+- La directive NgIf permet de conditionner l'affichage d'un template.
+- La directive NgFor permet d'afficher une propriété de type tableau dans un template.
+- On peut gérer les interactions d'un utilisateur avec un élément de la page grâce à la syntaxe : '(' + 'nom de l'événement' + ')'.
+- On peut référencer des variables directement dans le template plutôt que de manipuler l'objet $event.
+- Les variables référencées dans le template sont accessibles pour tous les éléments fils et frères de l'élément dans lequel elle ont été déclarées.
+- Essayez d'éviter de mettre la logique de votre application dans vos templates. Gardez-les le plus simple possible !
+-------------------------------------------
+- Interpolation allows us to display the properties of our components in templates, via the {{ }} syntax.
+- You can link an element, attribute, class or style property of a component to the template.
+- The NgIf directive allows you to condition the display of a template.
+- The NgFor directive allows you to display a table property in a template.
+- You can manage a user's interactions with a page element using the syntax: '(' +' +' event name' + ')'.
+- Variables can be referenced directly in the template rather than manipulating the $event object.
+- The variables referenced in the template are accessible for all the child and brother elements of the element in which they have been declared.
+- Try to avoid putting the logic of your application in your templates. Keep them as simple as possible!

@@ -1,0 +1,15 @@
+En résumé
+- SystemJS est la bibliothèque par défaut choisie par Angular pour charger les modules.
+- On a besoin au minimum d'un module racine et d'un composant racine par application.
+- Le module racine se nomme par convention AppModule.
+- Le composant racine se nomme par convention AppComponent.
+- L'ordre de chargement de l'application est le suivant : index.html > main.ts > app.module.ts > app.component.ts.
+- Le fichier package.json initial est fourni avec des commandes prêtes à l'emploi comme la commande npm start, qui nous permet de démarrer notre application web.
+-------------------------------------------
+Summary
+- SystemJS is the default library chosen by Angular to load the modules.
+- At least one root module and one root component per application is required.
+- The root module is conventionally called AppModule.
+- The root component is called by convention AppComponent.
+- The loading order of the application is as follows: index.html > main.ts > app.module.ts > app.component.ts.
+- The initial package.json file is provided with ready-to-use commands such as the npm start command, which allows us to start our web application.

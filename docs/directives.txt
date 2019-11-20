@@ -1,0 +1,17 @@
+En résumé
+On utilise l'annotation @Directive pour déclarer une directive dans notre application.
+Une directive d'attribut permet d'agir avec les éléments HTML d'une page, en leur attachant un comportement spécifique.
+Une directive utilise un sélecteur CSS pour cibler les éléments HTML sur lesquels elle s’applique.
+Il est recommandé de préfixer le nom de ses directives pour éviter les problèmes de collisions.
+Angular crée une nouvelle instance de notre directive à chaque fois qu'il détecte un élément HTML avec l'attribut correspondant. Il injecte alors dans le constructeur de la directive l'élément du DOM ElementRef.
+Il faut déclarer notre directive pour pouvoir l’utiliser.
+On utilise l'annotation @HostListener pour gérer les interactions de l'utilisateur au sein d'une directive.
+-------------------------------------------
+Summary
+We use the @Directive annotation to declare a directive in our application.
+An attribute directive allows you to act with the HTML elements of a page, attaching a specific behavior to them.
+A directive uses a CSS selector to target the HTML elements to which it applies.
+It is recommended to prefix the name of your directives to avoid collision problems.
+Angular creates a new instance of our directive every time it detects an HTML element with the corresponding attribute. It then injects the element of the DOM ElementRef into the manufacturer of the directive.
+We have to declare our directive in order to be able to use it.
+The @HostListener annotation is used to manage user interactions within a directive.

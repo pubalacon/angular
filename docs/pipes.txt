@@ -1,0 +1,15 @@
+En résumé
+Les pipes permettent de formater les données affichées dans nos templates.
+L'opérateur des pipes est « | ».
+Angular fournit des pipes prêts à l'emploi, disponibles dans tous les templates de notre application : DatePipe, UpperCasePipe, LowerCasePipe, etc.
+Les pipes peuvent avoir des paramètres, mais tous les paramètres sont facultatifs.
+On peut créer des pipes personnalisés pour les besoins de notre application avec l'annotation @Pipe.
+Les pipes personnalisés doivent être déclarés avant de pouvoir être utilisés dans les templates de composants. 
+-------------------------------------------
+In summary, the following is a summary
+Pipes are used to format the data displayed in our templates.
+The pipe operator is "|".
+Angular provides ready-to-use pipes, available in all templates of our application: DatePipe, UpperCasePipe, LowerCasePipe, etc.
+Pipes can have parameters, but all parameters are optional.
+We can create custom pipes for the needs of our application with the @Pipe annotation.
+Custom pipes must be declared before they can be used in component templates.

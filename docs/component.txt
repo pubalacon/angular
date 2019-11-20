@@ -1,0 +1,14 @@
+En résumé
+- Un composant fonctionne en associant la logique d'une classe TypeScript avec un template HTML.
+- On utilise l'annotation @Component pour indiquer à Angular qu'une classe est un composant.
+- On peut initialiser une propriété avec une valeur simple directement lors de sa déclaration ou dans le constructeur d'un composant.
+- Des méthodes nous permettent d'interagir avec le cycle de vie d'un composant. Ces méthodes sont toutes préfixées par ng.
+- La méthode ngOnInit permet de définir un comportement spécifique lors de l'initialisation d'un composant.
+- Les méthodes de cycle de vie d'un composant que nous utiliserons le plus sont ngOnInit et ngOnDestroy. 
+-------------------------------------------
+- A component works by associating the logic of a TypeScript class with an HTML template.
+- The @Component annotation is used to tell Angular that a class is a component.
+- A property can be initialized with a simple value directly when it is declared or in the constructor of a component.
+- Methods allow us to interact with the life cycle of a component. These methods are all prefixed by ng.
+- The ngOnInit method allows you to define a specific behavior when initializing a component.
+- The life cycle methods of a component that we will use the most are ngOnInit and ngOnDestroy. 
