@@ -2,6 +2,9 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
+import { AuthGuard } from "../auth-guard.service";
+import { AuthService } from "../auth.service";
+
 import { PokemonRoutingModule } from "./pokemon-routing.module";
 import { BorderCardDirective } from "./border-card.directive";
 import { PokemonTypeColorPipe } from "./pokemon-type-color.pipe";
@@ -26,7 +29,9 @@ import { EditPokemonComponent } from "./edit-pokemon.component";
         PokemonFormComponent
     ],
     providers:  [
-        PokemonService
+        PokemonService,
+        AuthService,
+        AuthGuard
     ]
 })
 

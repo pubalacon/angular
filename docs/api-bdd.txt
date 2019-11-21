@@ -1,0 +1,11 @@
+En résumé
+- Il est possible de mettre en place une API web de démonstration au sein de votre application. Cela vous permettra d'interagir avec un jeu de données configuré à l'avance.
+- Les Observables permettent de faciliter la gestion des événements asynchrones.
+- Les Observables sont adaptés pour gérer des séquences d'événements.
+- Les opérateurs RxJS ne sont pas tous disponibles dans Angular. Il faut étendre cette implémentation en important nous-même les opérateurs nécessaires.
+-------------------------------------------
+Summary
+- It is possible to set up a demonstration web API within your application. This will allow you to interact with a pre-configured dataset.
+- Observables make it easier to manage asynchronous events.
+- Observables are adapted to manage sequences of events.
+- Not all RxJS operators are available in Angular. It is necessary to extend this implementation by importing the necessary operators ourselves.

@@ -9,19 +9,25 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 import { PokemonModule } from './pokemon/pokemon.module';
 import { InMemoryDataService } from './pokemon/in-memory-data.service';
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         // Modules
         BrowserModule,
         HttpClientModule,
+        FormsModule,
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
         PokemonModule,
+        LoginRoutingModule,
         AppRoutingModule
     ],
     declarations: [
         // Components + Directives + Pipes
         AppComponent, 
+        LoginComponent,
         PageNotFoundComponent
     ],
     bootstrap: [AppComponent]
