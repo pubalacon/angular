@@ -1,0 +1,12 @@
+En résumé
+- L'authentification nécessite la mise en place d'un système fiable: on utilise pour cela les Guards.
+- Les Guards permettent de gérer toutes sortes de scénarios liés à la navigation: redirection, connexion, etc.
+- Les Guards reposent sur un mécanisme simple. Ils retournent un booléen de manière synchrone ou asynchrone, qui permet d'influencer le processus de navigation.
+- Il existe plusieurs types de Guards différents. Le type utilisé pour l'authentification est CanActivate.
+- Il faut toujours déclarer les Guards au niveau du module racine, ainsi que les services tiers qu'ils utilisent. 
+-------------------------------------------
+- Authentication requires the implementation of a reliable system: we use the Guards for this purpose.
+- The Guards allow you to manage all kinds of scenarios related to navigation: redirection, connection, etc.
+- The Guards are based on a simple mechanism. They return a Boolean in a synchronous or asynchronous way, which influences the navigation process.
+- There are several different types of Guards. The type used for authentication is CanActivate.
+- Guards must always be declared at the root module level, as well as the third-party services they use.
