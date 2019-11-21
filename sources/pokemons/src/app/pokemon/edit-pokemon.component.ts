@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Pokemon } from './pokemon';
 import { PokemonService } from './pokemon.service';
 
@@ -10,17 +10,20 @@ import { PokemonService } from './pokemon.service';
 
 export class EditPokemonComponent implements OnInit {
 
-    pokemon : Pokemon;
+    pokemon : Pokemon = null;
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router, 
         private _pokemonService : PokemonService ) { }
 
 	ngOnInit() {
-		let id: number;
-
+        /*
+        let id: number;
         id = +this.route.snapshot.paramMap.get("id");  // le param est une string, cela permet de le caster
+        // ou 
+        */
+
+        let id = +this.route.snapshot.paramMap.get("id");
 
 		this.pokemon = this._pokemonService.getPokemon(id);
     }
