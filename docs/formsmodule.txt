@@ -1,0 +1,16 @@
+En résumé
+- Il y a deux modules différents pour développer des formulaires avec Angular: FormsModule et ReactiveFormsModule.
+- Le module FormsModule est pratique pour développer des formulaires de petites tailles, et met à disposition les directives NgForm et NgModel.
+- La directive NgModel ajoute et retire certaines classes au champ sur lequel elle s'applique. Ces classes peuvent être utilisées pour afficher des messages d'erreurs ou de succès, et des indicateurs visuels.
+- La syntaxe à retenir pour utiliser NgModel est [()].
+- On peut utiliser les attributs HMTL5 pour gérer la validation côté client, comme required ou pattern.
+- On peut utiliser des validateurs personnalisés en développant ses propres méthodes de validation.
+- Il faut toujours effectuer une validation côté serveur en complément de la validation côté client, si vous avez prévu de stocker des données depuis votre application.
+-------------------------------------------
+- There are two different modules for developing forms with Angular: FormsModule and ReactiveFormsModule.
+- The FormsModule module is useful for developing small forms, and provides the NgForm and NgModel guidelines.
+- The NgModel Directive adds and removes certain classes to the scope to which it applies. These classes can be used to display error or success messages, and visual indicators.
+- The syntax to remember when using NgModel is [()].
+- HMTL5 attributes can be used to manage client-side validation, as required or pattern.
+- Custom validators can be used by developing your own validation methods.
+- You should always perform server-side validation in addition to client-side validation, if you plan to store data from your application.
