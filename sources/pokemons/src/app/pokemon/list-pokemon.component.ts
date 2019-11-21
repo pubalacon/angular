@@ -16,8 +16,14 @@ export class ListPokemonComponent implements OnInit {
 	constructor(private router: Router, private _pokemonService : PokemonService) { }
 ​
 	ngOnInit(): void {
-		//this.pokemons = POKEMONS;
-		this.pokemons = this._pokemonService.getPokemons();
+		// AVEC LE MOCK
+		// this.pokemons = POKEMONS;
+
+		// AVEC LE SERVICE
+		// this.pokemons = this._pokemonService.getPokemons();
+
+		// AVEC L'API HttpClient
+		this._pokemonService.getPokemons().subscribe(x => this.pokemons = x); // abonnement, si un pokemon est cree/supprime, l'ecouteur le detecte et le jeu de donnees est renvoyé a jour par le service sans reload de la page
 	}
 ​
 	selectPokemon(pokemon: Pokemon): void {

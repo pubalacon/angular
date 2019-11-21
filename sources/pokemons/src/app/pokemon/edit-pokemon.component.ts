@@ -24,8 +24,12 @@ export class EditPokemonComponent implements OnInit {
         */
 
         let id = +this.route.snapshot.paramMap.get("id");
+        
+        // AVEC LE SERVICE ET LE MOCK
+        //this.pokemon = this._pokemonService.getPokemon(id);
 
-		this.pokemon = this._pokemonService.getPokemon(id);
+        // AVEC L'API
+        this._pokemonService.getPokemon(id).subscribe(x => this.pokemon = x); // abonnement, si un pokemon est cree/supprime, l'ecouteur le detecte et le jeu de donnees est renvoyé a jour par le service sans reload de la page
     }
     
 ​}
