@@ -39,8 +39,7 @@ export class LoginComponent {
 
     constructor(
         private authService: AuthService,
-        private router: Router
-    ) {}
+        private router: Router) { }
 
     login() {
         this.message = "Tentative de connexion en cours...";

@@ -11,6 +11,7 @@ import { PokemonTypeColorPipe } from "./pokemon-type-color.pipe";
 import { ListPokemonComponent } from "./list-pokemon.component";
 import { DetailPokemonComponent } from "./detail-pokemon.component";
 import { PokemonService } from "./pokemon.service";
+import { PokemonTestService } from "./pokemon-test.service";
 import { PokemonFormComponent } from "./pokemon-form.component";
 import { EditPokemonComponent } from "./edit-pokemon.component";
 
@@ -30,6 +31,7 @@ import { EditPokemonComponent } from "./edit-pokemon.component";
     ],
     providers:  [
         PokemonService,
+        PokemonTestService,
         AuthService,
         AuthGuard
     ]

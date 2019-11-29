@@ -12,6 +12,10 @@ import { InMemoryDataService } from './pokemon/in-memory-data.service';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { environment } from './environment';
 
 @NgModule({
     imports: [
@@ -19,6 +23,8 @@ import { FormsModule } from '@angular/forms';
         BrowserModule,
         HttpClientModule,
         FormsModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireDatabaseModule,
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
         PokemonModule,
         LoginRoutingModule,
@@ -29,6 +35,9 @@ import { FormsModule } from '@angular/forms';
         AppComponent, 
         LoginComponent,
         PageNotFoundComponent
+    ],
+    providers: [
+        AngularFirestore
     ],
     bootstrap: [AppComponent]
 })

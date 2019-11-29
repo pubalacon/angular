@@ -3,6 +3,7 @@ import { Pokemon } from './pokemon';
 import { POKEMONS } from './mock-pokemon';
 import { Router } from '@angular/router';
 import { PokemonService } from './pokemon.service';
+​import { PokemonTestService } from './pokemon-test.service';
 ​
 @Component({
 	selector: 'list-pokemon',
@@ -13,7 +14,10 @@ export class ListPokemonComponent implements OnInit {
 ​
 	pokemons: Pokemon[] = null;
 ​
-	constructor(private router: Router, private _pokemonService : PokemonService) { }
+	constructor(
+		private router: Router, 
+		private _pokemonService : PokemonService,
+		private _pokemonTestService: PokemonTestService) { }
 ​
 	ngOnInit(): void {
 		// AVEC LE MOCK
@@ -32,4 +36,9 @@ export class ListPokemonComponent implements OnInit {
 		this.router.navigate(link);
 	}
 ​
+	createPokemon() {
+		let pokemon: Pokemon = this.pokemons[0]; // parce qu'on n'a pas de formulaire, on triche
+		console.log(pokemon);
+		this._pokemonTestService.createPokemon(pokemon);
+	}
 }
